@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-v1
+  namespace: prod
+  labels:
+    app: order
+    version: v1
+spec:
+  ports:
+  - port: 8000
+    name: http
+  selector:
+    app: order
+    version: v1
