@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,25 +25,25 @@ spec:
     spec:
       containers:
       - name: order
-        image: 379951292773.dkr.ecr.ap-southeast-1.amazonaws.com/eks-order:latest
+        image: 379951292773.dkr.ecr.ap-southeast-1.amazonaws.com/eks-order:4c3abeca
         imagePullPolicy: Always
         env:
-          - name: "KAFKA_BROKDER"
-            value: "b-2.dev-cluster.s07eh2.c2.kafka.ap-southeast-1.amazonaws.com:9092,b-1.dev-cluster.s07eh2.c2.kafka.ap-southeast-1.amazonaws.com:9092"
-          - name: "KAFKA_GROUP_ID"
-            value: "group-1"
-          - name: "RDS_DB_NAME"
-            value: "demo"
-          - name: "RDS_HOSTNAME"
-            value: "aws-dev.csvkyiskksyu.ap-southeast-1.rds.amazonaws.com"
-          - name: "RDS_PASSWORD"
-            value: "abcd1234"
-          - name: "RDS_PORT"
-            value: "3306"
-          - name: "RDS_USERNAME"
-            value: "admin"
-          - name: "VERSION"
-            value: "eks-order-v1"
+        - name: "KAFKA_BROKDER"
+          value: "b-2.dev-cluster.s07eh2.c2.kafka.ap-southeast-1.amazonaws.com:9092,b-1.dev-cluster.s07eh2.c2.kafka.ap-southeast-1.amazonaws.com:9092"
+        - name: "KAFKA_GROUP_ID"
+          value: "group-1"
+        - name: "RDS_DB_NAME"
+          value: "demo"
+        - name: "RDS_HOSTNAME"
+          value: "aws-dev.csvkyiskksyu.ap-southeast-1.rds.amazonaws.com"
+        - name: "RDS_PASSWORD"
+          value: "abcd1234"
+        - name: "RDS_PORT"
+          value: "3306"
+        - name: "RDS_USERNAME"
+          value: "admin"
+        - name: "VERSION"
+          value: "eks-order-v1"
         ports:
         - containerPort: 8000
 ---
