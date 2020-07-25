@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: order
-        image: 379951292773.dkr.ecr.ap-southeast-1.amazonaws.com/eks-order:5a512ed6
+        image: 379951292773.dkr.ecr.ap-southeast-1.amazonaws.com/eks-order:846d221f
         imagePullPolicy: Always
         env:
         - name: "KAFKA_BROKDER"
